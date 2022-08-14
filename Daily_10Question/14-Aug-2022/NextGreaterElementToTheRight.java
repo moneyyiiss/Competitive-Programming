@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-
+// complexity is 2n that is n
 public class NextGreaterElementToTheRight{
   public static void display(int[] a){
     StringBuilder sb = new StringBuilder();
