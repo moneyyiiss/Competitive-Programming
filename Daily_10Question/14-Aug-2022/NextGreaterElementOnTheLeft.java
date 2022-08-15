@@ -1,7 +1,22 @@
+//4
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Stack;
-
+//test case
+// 6
+// 2
+// 3
+// 1
+// 5
+// 4
+// 6
+// ans
+// -1
+// -1
+// 3
+// -1
+// 5
+// -1
 public class NextGreaterElementOnTheLeft{
     public static void main(String[] args) throws Exception{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -18,8 +33,8 @@ public class NextGreaterElementOnTheLeft{
         Stack<Integer> st = new Stack<>();
         st.push(arr[0]);
         ngel[0] = -1;
-        for(int i=1; i<arr.length-1; i++){
-            while(st.size() > 0 && arr[i] > st.peek()){
+        for(int i=1; i<=arr.length-1; i++){
+            while(st.size() > 0 && arr[i] >= st.peek()){
                 st.pop();
             }
             if(st.size() == 0){
