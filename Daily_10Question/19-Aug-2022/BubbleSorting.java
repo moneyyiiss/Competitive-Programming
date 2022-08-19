@@ -2,14 +2,15 @@ import java.util.Scanner;
 
 class BubbleSorting{
     public static void main(String[] args){
-        Scanner scn = new Scanner(System.in);
-        int n = scn.nextInt();
-        int[] arr = new int[n];
-        for(int i=0; i<n; i++){
-            arr[i] = scn.nextInt();
+        try (Scanner scn = new Scanner(System.in)) {
+            int n = scn.nextInt();
+            int[] arr = new int[n];
+            for(int i=0; i<n; i++){
+                arr[i] = scn.nextInt();
+            }
+            sorting(arr);
+            print(arr);
         }
-        sorting(arr);
-        print(arr);
     }
     public static void print(int[] arr){
         for(int i=0; i<arr.length; i++){
