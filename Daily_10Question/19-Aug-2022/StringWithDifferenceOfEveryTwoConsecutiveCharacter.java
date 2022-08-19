@@ -2,9 +2,10 @@ import java.util.Scanner;
 
 class StringWithDifferenceOfEveryTwoConsecutiveCharacter{
     public static void main(String[] args){
-        Scanner scn = new Scanner(System.in);
-        String str = scn.nextLine();
-        System.out.println(solution(str));
+        try (Scanner scn = new Scanner(System.in)) {
+            String str = scn.nextLine();
+            System.out.println(solution(str));
+        }
     }
     public static String solution(String str){
         StringBuilder sb = new StringBuilder();
