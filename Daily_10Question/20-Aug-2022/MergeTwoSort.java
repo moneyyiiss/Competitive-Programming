@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class MergeSort{
+class MergeTwoSort{
     public static int[] mergeTwoSortedArrays(int[] a, int[] b){
         //result array
         int[] mergearray = new int[a.length + b.length];
