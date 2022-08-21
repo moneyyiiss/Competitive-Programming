@@ -8,7 +8,7 @@ public class Demo {
     public static void main(String[] args) {
         //now creating object of student
         Student st1;
-// Note:- here this student is the type of class that we created in Student.java
+// Note:- here  student is the type of class that we created in Student.java
 // and here st1 is the variable
         st1 = new Student();
 //Note:- here st1 is a container who will store the reference of object
