@@ -1,0 +1,46 @@
+//Minimum Cost to cut a board into squares
+class Solution {
+    public static int minimumCostOfBreaking(int[] X, int[] Y,int M,int N) {
+        // code here
+        
+        int i=X.length-1;
+        int j=Y.length-1;
+        // Arrays.sort(X, Collections.reverseOrder());
+        // Arrays.sort(Y, Collections.reverseOrder());
+        Arrays.sort(X);
+        Arrays.sort(Y);
+        // reverse(X);
+        // reverse(Y);
+    
+        int total = 0;
+        int hc = 1; // horizontal cut
+        int vc = 1; //verticle cut
+        while(i>=0 && j>=0){
+            if(X[i]>Y[j]){
+                total = total + X[i]*hc;
+                i--;
+                vc++;
+            }else{
+                total = total + Y[j]*vc;
+                j--;
+                hc++;
+            }
+        }
+        
+        while(i>=0){
+            total = total+X[i]*hc;
+            i--;
+            vc++;
+        }
+        while(j>=0){
+            total = total + Y[j]*vc;
+            j--;
+            hc++;
+        }
+        
+        return total;
+    }
+    
+     
+}
+        
