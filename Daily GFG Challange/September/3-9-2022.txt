@@ -1,0 +1,28 @@
+//Minimum time to fulfil all orders
+//late submission
+class Solution {
+    public static int findMinTime(int n, int l, int[] arr) {
+        // code here
+        int low=1,high=Integer.MAX_VALUE;
+        while(low<=high){
+            int mid=low+(high-low)/2;
+            int total=0;
+            for(int i=0;i<l;i++){
+                total+=(root((double)1,(double)1,-((double)mid*(double)2)/(double)arr[i]));
+            }
+            if(total<n){
+                low=mid+1;
+            }
+            else
+                high=mid-1;
+        }
+        return low;
+    }
+    static int root(double a,double b,double c){
+        double D=b*b-4*a*c;
+        if(D<=0) return 0;
+        double res=(-b+Math.sqrt(D))/2*a;
+        return (int)res;
+        
+    }
+}
