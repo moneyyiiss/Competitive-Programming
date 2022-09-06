@@ -3,7 +3,7 @@ package September._6_9_2022;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Balanced_Brackets {
+public class Dublicate_Brackets {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         String str = scn.nextLine();
