@@ -1,0 +1,39 @@
+//Stack Permutations
+class Solution {
+    public static int isStackPermutation(int n, int[] ip, int[] op) {
+        // code here
+        //coded
+     Stack<Integer> st = new Stack<Integer>();
+       int firstDigit = op[0];
+       int i = 0;
+       int j = 0;
+       do{
+           int num = ip[i];
+           st.push(num);
+       }while(ip[i++] != firstDigit && i < n);
+       
+       boolean flag = false;
+       while (!st.isEmpty() || i <n || j < n) {
+  int num = st.isEmpty() ? 0 : st.peek();
+  if (st.isEmpty() || num != op[j]) {
+   if (i < n) {
+    do {
+     flag = true;
+     st.push(ip[i]);
+    } while (ip[i++] != op[j] && i < n);
+   }
+   if (i == n && !flag) {
+    break;
+   }
+   flag = false;
+   continue;
+  } else {
+   st.pop();
+  }
+  j++;
+ }
+       return !st.isEmpty()  ? 0 : 1;
+        
+    }
+}
+            
