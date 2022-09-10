@@ -1,0 +1,8 @@
+//Ball coloring
+class Solution {
+    static long noOfWays(long n){
+        // code here
+        //solved
+        return n*n+2-n;
+    }
+}
