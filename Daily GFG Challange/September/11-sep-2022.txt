@@ -1,0 +1,59 @@
+//solved
+//Count occurrences of a given word in a 2-d array
+class Solution
+{
+   int ans=0;
+   public int findOccurrence(char mat[][], String target)
+   {
+       // Write your code here
+       int r=mat.length;
+       int c=mat[0].length;
+       
+       for(int i=0;i<r;i++){
+           for(int j=0;j<c;j++){
+               if(mat[i][j]==target.charAt(0)){
+                   mat[i][j]='*';
+                   occur(r,c,i,j,target,mat,0);
+                   mat[i][j]=target.charAt(0);
+               }
+           }
+       }
+       return ans;
+   }
+   
+    void occur(int r,int c,int i,int j,String target,char mat[][],int ind){
+       
+       if(ind==target.length()-1){
+           ans++;
+           return;
+       }
+       
+       //right
+       if(j+1<c && target.charAt(ind+1)==mat[i][j+1]){
+           mat[i][j+1]='*';
+           occur(r,c,i,j+1,target,mat,ind+1);
+           mat[i][j+1]=target.charAt(ind+1);
+       }
+       
+       //left
+       if(j-1>=0 && target.charAt(ind+1)==mat[i][j-1]){
+           mat[i][j-1]='*';
+           occur(r,c,i,j-1,target,mat,ind+1);
+           mat[i][j-1]=target.charAt(ind+1);
+       }
+       
+       //down
+       if(i+1<r && target.charAt(ind+1)==mat[i+1][j]){
+           mat[i+1][j]='*';
+           occur(r,c,i+1,j,target,mat,ind+1);
+           mat[i+1][j]=target.charAt(ind+1);
+       }
+       
+       //up
+       if(i-1>=0 && target.charAt(ind+1)==mat[i-1][j]){
+           mat[i-1][j]='*';
+           occur(r,c,i-1,j,target,mat,ind+1);
+           mat[i-1][j]=target.charAt(ind+1);
+       }
+   }
+}
